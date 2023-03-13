@@ -3,3 +3,4 @@ pandas==1.5.3
 plotly==5.9.0
 protobuf==4.22.1
 openpyxl==3.0.10
+streamlit==1.12.0
