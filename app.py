@@ -140,8 +140,13 @@ new_combined_cores= similarity_index(part_number,freq,RAM,Flash,Lead,Pkg)
 
 #------- MAINPAGE -----------------
 
+col1, col2 = st.columns([4,1])
 
-st.title("Renesas RA family Cross-Reference Guide")
+with col1:
+    st.title("Renesas RA family Cross-Reference Guide")
+    
+with col2:
+   st.image("RA_white.png")
 
 cleaned_columns = ["Part Number","Operating Frequency (MHz)","Flash Size (kB) (Prog)","RAM Size (kB)","Core","Lead Count (#)","Pkg. Type","Group","Similarity_Index"]
 cleaned_columns_2 = ["Part Number","Operating Frequency (MHz)","Flash Size (kB) (Prog)","RAM Size (kB)","Core","Lead Count (#)","Pkg. Type","Group"]
@@ -159,9 +164,9 @@ st.subheader('3D graph representing the RA device of the top 10 parts')
 
 fig = px.scatter_3d(new_combined_cores[:10], x="Operating Frequency (MHz)", y='RAM Size (kB)', z='Flash Size (kB) (Prog)',
               color='Group',width=900, height=900)
-st.plotly_chart(fig,use_container_width=True)
-col1, col2, col3 = st.columns(3)
-st.image("RA_white.png", use_column_width="auto")
+st.plotly_chart(fig,use_container_width=True,theme=None)
+
+
 
 #---- HIDE STREAMLIT STYLE   -------#
 
