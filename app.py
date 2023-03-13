@@ -164,7 +164,8 @@ st.subheader('3D graph representing the RA device of the top 10 parts')
 
 fig = px.scatter_3d(new_combined_cores[:10], x="Operating Frequency (MHz)", y='RAM Size (kB)', z='Flash Size (kB) (Prog)',
               color='Group',width=900, height=900)
-st.plotly_chart(fig,use_container_width=True,theme=None)
+
+st.plotly_chart(fig,use_container_width=True,theme="streamlit")
 
 
 
